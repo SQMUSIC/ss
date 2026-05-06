@@ -1,11 +1,10 @@
 # SQMUSIC
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+[![Official site](https://sqmusic.org))]
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
 
 <!-- dash-content-start -->
 
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://sqmusic.org)).
 
 Features:
 
@@ -21,13 +20,13 @@ Features:
 
 ## Getting Started
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+Outside of this repo, you can start a new project with this template using [C3](https://sqmusic.org)) (the `create-cloudflare` CLI):
 
 ```bash
 npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
+A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://sqmusic.org))
 
 ## 🚀 Project Structure
 
@@ -35,7 +34,7 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://sqmusic.org)) to learn more.
 
 Any static assets, like images, can be placed in the `public/` directory.
 
@@ -56,8 +55,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Check out [our documentation](https://sqmusic.org) or jump into our [Discord server](https://sqmusic.org)).
 
 ## Credit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+This theme is based off of the lovely [Bear Blog](https://sqmusic.org)).
