@@ -5,97 +5,72 @@ const today = new Date();
 <footer class="footer">
   <div class="footer-top">
     <p class="location">
-      Lyon, Rhône, Auvergne-Rhône-Alpes, France
+      Lyon, France
     </p>
 
     <a href="https://maps.google.com" target="_blank" class="directions">
-      Get directions →
+      Get Directions →
     </a>
 
-    <!-- СОЦСЕТИ -->
     <div class="socials">
-      <!-- YouTube -->
-      <a href="#" target="_blank">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-          <path d="M23.5 6.2s-.2-1.7-.9-2.5c-.9-1-1.9-1-2.4-1.1C16.8 2.3 12 2.3 12 2.3h0s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 1.1-.7.8-.9 2.5-.9 2.5S0 8.2 0 10.1v1.8c0 1.9.5 3.9.5 3.9s.2 1.7.9 2.5c.9 1 2.1 1 2.7 1.1 2 .2 7.9.3 7.9.3s4.8 0 8.2-.3c.5-.1 1.5-.1 2.4-1.1.7-.8.9-2.5.9-2.5s.5-2 .5-3.9v-1.8c0-1.9-.5-3.9-.5-3.9zM9.7 14.6V7.8l6.5 3.4-6.5 3.4z"/>
-        </svg>
-      </a>
-
-      <!-- Instagram -->
-      <a href="#" target="_blank">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 
-          0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 
-          5 5 0 010-10zm6.5-.8a1.2 1.2 0 110 2.4 
-          1.2 1.2 0 010-2.4z"/>
-        </svg>
-      </a>
-
-      <!-- X -->
-      <a href="#" target="_blank">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-          <path d="M18 2h3l-7.5 8.5L22 22h-6l-4.7-6.1L5.5 22H2l8-9.2L2 
-          2h6l4.3 5.6L18 2z"/>
-        </svg>
-      </a>
-
-      <!-- TikTok -->
-      <a href="#" target="_blank">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-          <path d="M16 3c.5 2 2 3.5 4 4v3c-1.5 0-3-.5-4-1.3V16a5 
-          5 0 11-5-5c.3 0 .7 0 1 .1v3a2 2 0 102 2V3h2z"/>
-        </svg>
-      </a>
-
-      <!-- Snapchat -->
-      <a href="#" target="_blank">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-          <path d="M12 2c3 0 5 2.2 5 5v3c0 .6.3 1.2.8 
-          1.5.5.3 1.2.3 1.7 0l.5.7c-.5.5-1.3.8-2.2 
-          1 .2.8.8 1.5 1.5 2-.7.5-1.6.8-2.5 
-          .9-.3 1-1.3 2-2.8 2s-2.5-1-2.8-2c-.9-.1-1.8-.4-2.5-.9.7-.5 
-          1.3-1.2 1.5-2-.9-.2-1.7-.5-2.2-1l.5-.7c.5.3 
-          1.2.3 1.7 0 .5-.3.8-.9.8-1.5V7c0-2.8 
-          2-5 5-5z"/>
-        </svg>
-      </a>
+      <a href="#" aria-label="YouTube">YT</a>
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="X">X</a>
+      <a href="#" aria-label="TikTok">TT</a>
+      <a href="#" aria-label="Snapchat">SC</a>
     </div>
   </div>
 
-  <!-- НИЗ -->
-  <div class="footer-bottom">
-    <p>© {today.getFullYear()} SQMUSIC. All Rights Reserved.</p>
-
-    <div class="links">
-      <a href="#">Terms & Conditions</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Shipping & Payment Info</a>
-      <a href="#">Return Policy</a>
-      <a href="#">About Us</a>
-      <a href="#">Cookie settings</a>
-      <a href="#">Report abuse</a>
+  <div class="footer-links">
+    <div>
+      <p class="title">Company</p>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </div>
+
+    <div>
+      <p class="title">Legal</p>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Settings</a>
+    </div>
+
+    <div>
+      <p class="title">Support</p>
+      <a href="#">Shipping & Delivery</a>
+      <a href="#">Returns & Refunds</a>
+      <a href="#">Report an Issue</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {today.getFullYear()} SQMUSIC. All rights reserved.</p>
   </div>
 </footer>
 
 <style>
 .footer {
   background: #000;
-  color: #aaa;
-  text-align: center;
-  padding: 60px 20px;
+  color: #888;
+  padding: 80px 20px 40px;
+  font-size: 14px;
 }
 
-/* верх */
+/* top */
+.footer-top {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
 .location {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
 .directions {
   display: inline-block;
   margin-bottom: 20px;
-  color: #888;
+  color: #777;
   text-decoration: none;
 }
 
@@ -103,41 +78,59 @@ const today = new Date();
   color: #fff;
 }
 
-/* соцсети */
+/* socials */
 .socials {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin-top: 10px;
+  gap: 30px;
 }
 
 .socials a {
-  color: #888;
+  color: #666;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .socials a:hover {
   color: #fff;
 }
 
-/* низ */
-.footer-bottom p {
-  margin: 30px 0 20px;
-}
-
-/* сетка ссылок */
-.links {
+/* columns */
+.footer-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
-  max-width: 700px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 800px;
+  margin: 0 auto 40px;
+  gap: 40px;
 }
 
-.links a {
-  color: #888;
-  text-decoration: none;
-  font-size: 14px;
+.footer-links .title {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
+
+.footer-links a {
+  display: block;
+  color: #666;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #111;
+  padding-top: 20px;
+  font-size: 13px;
+}
+</style>
 
 .links a:hover {
   color: #fff;
