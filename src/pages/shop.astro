@@ -1,29 +1,38 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
   </head>
 
-  <body>
+  <body style="margin:0; background:#0f0f0f; color:white; font-family:sans-serif;">
+
     <Header />
 
-    <main style="padding:20px;">
-      <h1>🛍️ SHOP</h1>
+    <main style="padding:40px;">
 
-      <iframe
-        src="https://shop.sqmusic.site"
-        style="width:100%; height:80vh; border:none;"
-      ></iframe>
+      <h1 data-i18n="shop_title">Shop</h1>
+
+      <p data-i18n="shop_text">
+        My store is below
+      </p>
+
+      <div style="margin-top:25px;">
+        <iframe
+          src="https://shop.sqmusic.site"
+          style="width:100%; height:80vh; border:none; border-radius:12px;"
+          loading="lazy"
+        ></iframe>
+      </div>
 
     </main>
 
     <Footer />
+
   </body>
 </html>
