@@ -1,12 +1,13 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
 <header class="header">
   <!-- LOGO -->
   <a href="/" class="logo">SQMUSIC™</a>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <nav class="nav">
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
@@ -15,7 +16,7 @@ import HeaderLink from './HeaderLink.astro';
     <HeaderLink href="/contact">Contact</HeaderLink>
   </nav>
 
-  <!-- RIGHT -->
+  <!-- RIGHT SIDE -->
   <div class="right-side">
 
     <!-- LANGUAGES -->
@@ -75,14 +76,11 @@ import HeaderLink from './HeaderLink.astro';
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 22px 40px;
-
   background: white;
   border-bottom: 1px solid #eee;
 }
 
-/* logo */
 .logo {
   font-size: 22px;
   font-weight: 700;
@@ -90,7 +88,6 @@ import HeaderLink from './HeaderLink.astro';
   color: black;
 }
 
-/* nav */
 .nav {
   display: flex;
   gap: 35px;
@@ -108,14 +105,12 @@ import HeaderLink from './HeaderLink.astro';
   border-bottom: 2px solid #5A3D7F;
 }
 
-/* right side */
 .right-side {
   display: flex;
   align-items: center;
   gap: 22px;
 }
 
-/* language */
 .language-select {
   border: 1px solid #ddd;
   background: white;
@@ -124,7 +119,6 @@ import HeaderLink from './HeaderLink.astro';
   outline: none;
 }
 
-/* socials */
 .socials {
   display: flex;
   align-items: center;
@@ -141,7 +135,6 @@ import HeaderLink from './HeaderLink.astro';
   transform: translateY(-2px);
 }
 
-/* mobile */
 @media (max-width: 900px) {
   .nav {
     display: none;
