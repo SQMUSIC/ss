@@ -1,44 +1,26 @@
-<html lang="en">
-  <head>
-    <title>SQMUSIC SHOP</title>
-  </head>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
 
-  <body style="margin:0; font-family:sans-serif; background:#0f0f0f; color:white;">
+<BaseLayout title="SQMUSIC SHOP">
 
-    <!-- HEADER -->
-    <header style="padding:20px; display:flex; gap:20px; border-bottom:1px solid #222;">
-      <a href="/" style="color:white; text-decoration:none;">Home</a>
-      <a href="/shop" style="color:white; text-decoration:none;">Shop</a>
-      <a href="/contact" style="color:white; text-decoration:none;">Contact</a>
-    </header>
+  <h1>🛍️ SHOP TEST (Telegram)</h1>
+  <p>Trying to embed Telegram channel inside iframe</p>
 
-    <!-- CONTENT -->
-    <main style="padding:20px;">
-      <h1>🛍️ SHOP TEST (Telegram)</h1>
-      <p>Trying to embed Telegram channel inside iframe</p>
+  <iframe
+    src="https://t.me/OFFICIAL_SQMUSIC"
+    style="width:100%; height:80vh; border:none; border-radius:12px;"
+    loading="lazy"
+  ></iframe>
 
-      <!-- IFRAME -->
-      <div style="margin-top:20px;">
+  <div style="margin-top:20px;">
+    <p>⚠️ If nothing shows, Telegram blocks iframe embedding.</p>
 
-        <iframe
-          src="https://t.me/OFFICIAL_SQMUSIC"
-          style="width:100%; height:80vh; border:none; border-radius:12px;"
-          loading="lazy"
-        ></iframe>
+    <a href="https://t.me/OFFICIAL_SQMUSIC" target="_blank">
+      <button style="padding:12px 20px; border:none; border-radius:8px; cursor:pointer;">
+        Open Telegram Channel
+      </button>
+    </a>
+  </div>
 
-        <!-- FALLBACK -->
-        <div style="margin-top:20px;">
-          <p>⚠️ If nothing shows, Telegram blocks iframe embedding.</p>
-
-          <a href="https://t.me/OFFICIAL_SQMUSIC" target="_blank">
-            <button style="padding:12px 20px; border:none; border-radius:8px; cursor:pointer;">
-              Open Telegram Channel
-            </button>
-          </a>
-        </div>
-
-      </div>
-    </main>
-
-  </body>
-</html>
+</BaseLayout>
