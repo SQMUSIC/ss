@@ -1,14 +1,11 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import BaseHead from '../components/BaseHead.astro';
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
-  </head>
+  <BaseHead title="Contact" />
 
   <body style="margin:0; background:#0f0f0f; color:white; font-family:sans-serif;">
 
@@ -18,23 +15,15 @@ import Footer from '../components/Footer.astro';
 
       <h1 data-i18n="contact_title">Contact</h1>
 
-      <form style="
-        display:flex;
-        flex-direction:column;
-        gap:15px;
-        max-width:400px;
-        margin-top:20px;
-      ">
+      <form style="display:flex; flex-direction:column; gap:15px; max-width:400px;">
 
         <input
-          type="text"
           placeholder="Name"
           data-placeholder-i18n="contact_name"
           style="padding:12px; border:none; border-radius:8px;"
         />
 
         <input
-          type="email"
           placeholder="Email"
           data-placeholder-i18n="contact_email"
           style="padding:12px; border:none; border-radius:8px;"
@@ -47,16 +36,8 @@ import Footer from '../components/Footer.astro';
         ></textarea>
 
         <button
-          type="submit"
           data-i18n="contact_send"
-          style="
-            padding:12px;
-            border:none;
-            border-radius:8px;
-            background:#5A3D7F;
-            color:white;
-            cursor:pointer;
-          "
+          style="padding:12px; border:none; border-radius:8px; background:#5A3D7F; color:white;"
         >
           Send
         </button>
