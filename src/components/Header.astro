@@ -1,6 +1,5 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 ---
 
 <header class="header">
@@ -35,35 +34,23 @@ import { SITE_TITLE } from '../consts';
     <div class="socials">
 
       <!-- YOUTUBE -->
-      <a
-        href="https://www.youtube.com/channel/UC-Wv4GZo6gk4_xcgV9Vjtug"
-        target="_blank"
-        aria-label="YouTube"
-      >
+      <a href="https://www.youtube.com/channel/UC-Wv4GZo6gk4_xcgV9Vjtug" target="_blank" aria-label="YouTube">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
           <path d="M23.5 6.2s-.2-1.7-.9-2.5c-.9-1-1.9-1-2.4-1.1C16.8 2.3 12 2.3 12 2.3s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 1.1-.7.8-.9 2.5-.9 2.5S0 8.2 0 10.1v1.8c0 1.9.5 3.9.5 3.9s.2 1.7.9 2.5c.9 1 2.1 1 2.7 1.1 2 .2 7.9.3 7.9.3s4.8 0 8.2-.3c.5-.1 1.5-.1 2.4-1.1.7-.8.9-2.5.9-2.5s.5-2 .5-3.9v-1.8c0-1.9-.5-3.9-.5-3.9zM9.7 14.6V7.8l6.5 3.4-6.5 3.4z"/>
         </svg>
       </a>
 
       <!-- X -->
-      <a
-        href="https://x.com/OFFICIALSQMUSIC"
-        target="_blank"
-        aria-label="X"
-      >
+      <a href="https://x.com/OFFICIALSQMUSIC" target="_blank" aria-label="X">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
           <path d="M18 2h3l-7.5 8.5L22 22h-6l-4.7-6.1L5.5 22H2l8-9.2L2 2h6l4.3 5.6L18 2z"/>
         </svg>
       </a>
 
       <!-- TELEGRAM -->
-      <a
-        href="https://t.me/OFFICIAL_SQMUSIC"
-        target="_blank"
-        aria-label="Telegram"
-      >
+      <a href="https://t.me/OFFICIAL_SQMUSIC" target="_blank" aria-label="Telegram">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-          <path d="M9.04 15.47 8.7 20.3c.5 0 .72-.22.98-.48l2.36-2.27 4.9 3.59c.9.5 1.54.24 1.78-.83l3.23-15.13c.3-1.4-.5-1.95-1.37-1.63L1.64 10.32c-1.36.53-1.34 1.3-.23 1.65l4.84 1.51L17.5 6.4c.53-.35 1.02-.16.62.19"/>
+          <path d="M9.04 15.47L8.7 20.3c.5 0 .72-.22.98-.48l2.36-2.27 4.9 3.59c.9.5 1.54.24 1.78-.83l3.23-15.13c.3-1.4-.5-1.95-1.37-1.63L1.64 10.32c-1.36.53-1.34 1.3-.23 1.65l4.84 1.51L17.5 6.4c.53-.35 1.02-.16.62.19z"/>
         </svg>
       </a>
 
@@ -74,8 +61,8 @@ import { SITE_TITLE } from '../consts';
 <style>
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 22px 40px;
   background: white;
   border-bottom: 1px solid #eee;
@@ -91,18 +78,6 @@ import { SITE_TITLE } from '../consts';
 .nav {
   display: flex;
   gap: 35px;
-}
-
-.nav a {
-  color: #666;
-  text-decoration: none;
-  padding-bottom: 6px;
-}
-
-.nav a:hover,
-.nav a.active {
-  color: black;
-  border-bottom: 2px solid #5A3D7F;
 }
 
 .right-side {
@@ -121,7 +96,6 @@ import { SITE_TITLE } from '../consts';
 
 .socials {
   display: flex;
-  align-items: center;
   gap: 18px;
 }
 
@@ -136,10 +110,7 @@ import { SITE_TITLE } from '../consts';
 }
 
 @media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
-
+  .nav,
   .language-select {
     display: none;
   }
