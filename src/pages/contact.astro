@@ -1,31 +1,71 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
   </head>
 
-  <body>
+  <body style="margin:0; background:#0f0f0f; color:white; font-family:sans-serif;">
+
     <Header />
 
-    <main style="padding:20px;">
-      <h1>📩 CONTACT</h1>
+    <main style="padding:40px;">
 
-      <form style="display:flex; flex-direction:column; gap:10px; max-width:400px;">
-        <input placeholder="Name" />
-        <input placeholder="Email" />
-        <textarea placeholder="Message"></textarea>
-        <button>Send</button>
+      <h1 data-i18n="contact_title">Contact</h1>
+
+      <form style="
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+        max-width:400px;
+        margin-top:20px;
+      ">
+
+        <input
+          type="text"
+          placeholder="Name"
+          data-placeholder-i18n="contact_name"
+          style="padding:12px; border:none; border-radius:8px;"
+        />
+
+        <input
+          type="email"
+          placeholder="Email"
+          data-placeholder-i18n="contact_email"
+          style="padding:12px; border:none; border-radius:8px;"
+        />
+
+        <textarea
+          placeholder="Message"
+          data-placeholder-i18n="contact_message"
+          style="padding:12px; border:none; border-radius:8px; min-height:120px;"
+        ></textarea>
+
+        <button
+          type="submit"
+          data-i18n="contact_send"
+          style="
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#5A3D7F;
+            color:white;
+            cursor:pointer;
+          "
+        >
+          Send
+        </button>
+
       </form>
 
     </main>
 
     <Footer />
+
   </body>
 </html>
