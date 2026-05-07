@@ -1,12 +1,16 @@
-<html>
-  <body>
-    <h1>📩 CONTACT</h1>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
 
-    <form style="display:flex; flex-direction:column; gap:10px; max-width:300px;">
-      <input placeholder="Name" />
-      <input placeholder="Email" />
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </body>
-</html>
+<BaseLayout title="Contact">
+
+  <h1>📩 CONTACT</h1>
+
+  <form style="display:flex; flex-direction:column; gap:10px; max-width:300px;">
+    <input placeholder="Name" />
+    <input placeholder="Email" />
+    <textarea placeholder="Message"></textarea>
+    <button>Send</button>
+  </form>
+
+</BaseLayout>
