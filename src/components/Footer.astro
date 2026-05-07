@@ -7,19 +7,28 @@ const today = new Date();
     <p class="location">SQMUSIC — Global Music Project</p>
 
     <div class="footer-links">
+
       <div>
-        <p class="title">Legal</p>
-        <a href="#">Terms</a>
-        <a href="#">Privacy</a>
-        <a href="#">Cookies</a>
+        <p class="title">Navigation</p>
+        <a href="/">Home</a>
+        <a href="/shop">Shop</a>
+        <a href="/contact">Contact</a>
       </div>
 
       <div>
         <p class="title">Support</p>
-        <a href="#">Shipping</a>
-        <a href="#">Returns</a>
-        <a href="#">Report</a>
+        <a href="https://shop.sqmusic.site" target="_blank">Store Help</a>
+        <a href="#">Report Issue</a>
+        <a href="mailto:support@sqmusic.site">Email Support</a>
       </div>
+
+      <div>
+        <p class="title">Social</p>
+        <a href="https://t.me/OFFICIAL_SQMUSIC" target="_blank">Telegram</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://soundcloud.com" target="_blank">SoundCloud</a>
+      </div>
+
     </div>
   </div>
 
@@ -46,11 +55,12 @@ const today = new Date();
   font-size: 14px;
 }
 
+/* 🔥 теперь 3 колонки */
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -66,10 +76,12 @@ const today = new Date();
   margin-bottom: 8px;
   text-decoration: none;
   font-size: 13px;
+  transition: 0.2s;
 }
 
 .footer-links a:hover {
   color: #fff;
+  transform: translateX(3px);
 }
 
 .footer-bottom {
@@ -78,5 +90,13 @@ const today = new Date();
   padding-top: 20px;
   font-size: 13px;
   color: #777;
+}
+
+/* 📱 mobile */
+@media (max-width: 700px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 </style>
