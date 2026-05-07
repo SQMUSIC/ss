@@ -8,50 +8,41 @@ import HeaderLink from './HeaderLink.astro';
 
   <!-- NAVIGATION -->
   <nav class="nav">
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
-    <HeaderLink href="/shop">Shop</HeaderLink>
-    <HeaderLink href="/contact">Contact</HeaderLink>
+    <HeaderLink href="/" data-i18n="home">Home</HeaderLink>
+    <HeaderLink href="/blog" data-i18n="blog">Blog</HeaderLink>
+    <HeaderLink href="/about" data-i18n="about">About</HeaderLink>
+    <HeaderLink href="/shop" data-i18n="shop">Shop</HeaderLink>
+    <HeaderLink href="/contact" data-i18n="contact">Contact</HeaderLink>
   </nav>
 
   <!-- RIGHT SIDE -->
   <div class="right-side">
 
-    <!-- LANGUAGES -->
+    <!-- LANG -->
     <select class="language-select">
-      <option>EN</option>
-      <option>FR</option>
-      <option>RU</option>
-      <option>DE</option>
-      <option>PL</option>
-      <option>AR</option>
-      <option>JP</option>
-      <option>ES</option>
+      <option value="en">EN</option>
+      <option value="fr">FR</option>
+      <option value="ru">RU</option>
+      <option value="de">DE</option>
+      <option value="pl">PL</option>
+      <option value="ar">AR</option>
+      <option value="jp">JP</option>
+      <option value="es">ES</option>
     </select>
 
     <!-- SOCIALS -->
     <div class="socials">
 
-      <!-- YOUTUBE -->
       <a href="https://www.youtube.com/channel/UC-Wv4GZo6gk4_xcgV9Vjtug" target="_blank" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M23.5 6.2s-.2-1.7-.9-2.5c-.9-1-1.9-1-2.4-1.1C16.8 2.3 12 2.3 12 2.3s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 1.1-.7.8-.9 2.5-.9 2.5S0 8.2 0 10.1v1.8c0 1.9.5 3.9.5 3.9s.2 1.7.9 2.5c.9 1 2.1 1 2.7 1.1 2 .2 7.9.3 7.9.3s4.8 0 8.2-.3c.5-.1 1.5-.1 2.4-1.1.7-.8.9-2.5.9-2.5s.5-2 .5-3.9v-1.8c0-1.9-.5-3.9-.5-3.9zM9.7 14.6V7.8l6.5 3.4-6.5 3.4z"/>
-        </svg>
+        ▶
       </a>
 
-      <!-- X -->
       <a href="https://x.com/OFFICIALSQMUSIC" target="_blank" aria-label="X">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-          <path d="M18 2h3l-7.5 8.5L22 22h-6l-4.7-6.1L5.5 22H2l8-9.2L2 2h6l4.3 5.6L18 2z"/>
-        </svg>
+        ✕
       </a>
 
-      <!-- TELEGRAM -->
       <a href="https://t.me/OFFICIAL_SQMUSIC" target="_blank" aria-label="Telegram">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-          <path d="M9.04 15.47L8.7 20.3c.5 0 .72-.22.98-.48l2.36-2.27 4.9 3.59c.9.5 1.54.24 1.78-.83l3.23-15.13c.3-1.4-.5-1.95-1.37-1.63L1.64 10.32c-1.36.53-1.34 1.3-.23 1.65l4.84 1.51L17.5 6.4c.53-.35 1.02-.16.62.19z"/>
-        </svg>
+        ✈
       </a>
 
     </div>
@@ -101,6 +92,8 @@ import HeaderLink from './HeaderLink.astro';
 
 .socials a {
   color: #444;
+  text-decoration: none;
+  font-size: 16px;
   transition: 0.2s;
 }
 
@@ -116,3 +109,86 @@ import HeaderLink from './HeaderLink.astro';
   }
 }
 </style>
+
+<!-- 🌍 LANGUAGE SYSTEM -->
+<script>
+  const translations = {
+    en: {
+      home: "Home",
+      blog: "Blog",
+      about: "About",
+      shop: "Shop",
+      contact: "Contact"
+    },
+    fr: {
+      home: "Accueil",
+      blog: "Blog",
+      about: "À propos",
+      shop: "Boutique",
+      contact: "Contact"
+    },
+    ru: {
+      home: "Главная",
+      blog: "Блог",
+      about: "О нас",
+      shop: "Магазин",
+      contact: "Контакты"
+    },
+    de: {
+      home: "Start",
+      blog: "Blog",
+      about: "Über",
+      shop: "Shop",
+      contact: "Kontakt"
+    },
+    pl: {
+      home: "Strona główna",
+      blog: "Blog",
+      about: "O nas",
+      shop: "Sklep",
+      contact: "Kontakt"
+    },
+    ar: {
+      home: "الرئيسية",
+      blog: "مدونة",
+      about: "حول",
+      shop: "المتجر",
+      contact: "اتصال"
+    },
+    jp: {
+      home: "ホーム",
+      blog: "ブログ",
+      about: "概要",
+      shop: "ショップ",
+      contact: "連絡"
+    },
+    es: {
+      home: "Inicio",
+      blog: "Blog",
+      about: "Sobre",
+      shop: "Tienda",
+      contact: "Contacto"
+    }
+  };
+
+  const select = document.querySelector(".language-select");
+
+  function setLang(lang) {
+    localStorage.setItem("lang", lang);
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  select.addEventListener("change", (e) => {
+    setLang(e.target.value);
+  });
+
+  const saved = localStorage.getItem("lang") || "en";
+  select.value = saved;
+  setLang(saved);
+</script>
