@@ -1,31 +1,17 @@
+---
+const today = new Date();
+---
+
 <footer class="footer">
   <div class="footer-top">
     <p class="location">
-      Netherlands
-    </p>
-
-    <a href="https://maps.google.com" target="_blank" class="directions">
-      Get Directions →
-    </a>
-
-    <div class="socials">
-      <a href="#" aria-label="YouTube">YT</a>
-      <a href="#" aria-label="Instagram">IG</a>
-      <a href="#" aria-label="X">X</a>
-      <a href="#" aria-label="TikTok">TT</a>
-      <a href="#" aria-label="Snapchat">SC</a>
-    </div>
-  </div>
-
-  <div class="footer-links">
-    <div>
-      <p class="title">Company</p>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </div>
+@@ -30,21 +26,21 @@ const today = new Date();
 
     <div>
       <p class="title">Legal</p>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Settings</a>
       <a href="#">Terms</a>
       <a href="#">Privacy</a>
       <a href="#">Cookies</a>
@@ -33,6 +19,9 @@
 
     <div>
       <p class="title">Support</p>
+      <a href="#">Shipping & Delivery</a>
+      <a href="#">Returns & Refunds</a>
+      <a href="#">Report an Issue</a>
       <a href="#">Shipping</a>
       <a href="#">Returns</a>
       <a href="#">Report</a>
@@ -40,87 +29,74 @@
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 SQMUSIC</p>
+    <p>© {today.getFullYear()} SQMUSIC™. All rights reserved.</p>
+    <p>© 2026 SQMUSIC™ </p>
   </div>
 </footer>
 
-<style>
-.footer {
-  background: #000;
-  color: #888;
-  padding: 80px 20px 40px;
+@@ -56,7 +52,7 @@ const today = new Date();
   font-size: 14px;
 }
 
+/* top */
 /* верх */
 .footer-top {
   text-align: center;
   margin-bottom: 60px;
-}
-
-.location {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.directions {
+@@ -71,14 +67,13 @@ const today = new Date();
   display: inline-block;
   margin-bottom: 20px;
   color: #777;
+  text-decoration: none;
 }
 
 .directions:hover {
   color: #fff;
 }
 
+/* socials */
 /* соцсети */
 .socials {
   display: flex;
   justify-content: center;
-  gap: 30px;
-}
-
-.socials a {
+@@ -89,14 +84,13 @@ const today = new Date();
   color: #666;
   font-size: 13px;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .socials a:hover {
   color: #fff;
 }
 
+/* columns */
 /* блоки */
 .footer-links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 800px;
-  margin: 0 auto 40px;
-  gap: 40px;
-}
-
-.footer-links .title {
-  color: #fff;
-  margin-bottom: 15px;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-.footer-links a {
+@@ -116,23 +110,17 @@ const today = new Date();
   display: block;
   color: #666;
   margin-bottom: 8px;
+  text-decoration: none;
 }
 
 .footer-links a:hover {
   color: #fff;
 }
 
+/* bottom */
 /* низ */
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #111;
   padding-top: 20px;
   font-size: 13px;
+}
+</style>
+
+.links a:hover {
+  color: #fff;
 }
 </style>
