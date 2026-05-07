@@ -137,3 +137,33 @@ import HeaderLink from './HeaderLink.astro';
   select.value = saved;
   setLang(saved);
 </script>
+
+
+
+
+
+<script is:inline>
+  import { translations } from '../i18n.js';
+
+  const select = document.querySelector(".language-select");
+
+  function setLang(lang) {
+    localStorage.setItem("lang", lang);
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  select.addEventListener("change", (e) => {
+    setLang(e.target.value);
+  });
+
+  const saved = localStorage.getItem("lang") || "en";
+  select.value = saved;
+  setLang(saved);
+</script>
