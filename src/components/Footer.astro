@@ -8,25 +8,29 @@ const today = new Date();
 
     <div class="footer-links">
 
+      <!-- NAVIGATION -->
       <div>
         <p class="title">Navigation</p>
         <a href="/">Home</a>
         <a href="/shop">Shop</a>
         <a href="/contact">Contact</a>
+        <a href="/about">About</a>
       </div>
 
+      <!-- SUPPORT -->
       <div>
         <p class="title">Support</p>
-        <a href="https://shop.sqmusic.site" target="_blank">Store Help</a>
-        <a href="#">Report Issue</a>
-        <a href="mailto:support@sqmusic.site">Email Support</a>
+        <a href="mailto:no-reply@support.shop.sqmusic.site">Store Help</a>
+        <a href="/contact">Contact</a>
+        <a href="mailto:artist@sqmusic.site">For Artists</a>
       </div>
 
+      <!-- SOCIAL -->
       <div>
         <p class="title">Social</p>
         <a href="https://t.me/OFFICIAL_SQMUSIC" target="_blank">Telegram</a>
-        <a href="https://instagram.com" target="_blank">Instagram</a>
-        <a href="https://soundcloud.com" target="_blank">SoundCloud</a>
+        <a href="https://audiomack.com/official_sqmusic" target="_blank">Audiomack</a>
+        <a href="https://beacons.ai/official_sqmusic" target="_blank">Beacons</a>
       </div>
 
     </div>
@@ -55,12 +59,11 @@ const today = new Date();
   font-size: 14px;
 }
 
-/* 🔥 теперь 3 колонки */
 .footer-links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
