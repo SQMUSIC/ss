@@ -4,22 +4,179 @@ const { lang = "en" } = Astro.props;
 
 <header class="header">
 
-  <a href={`/${lang}`} class="logo">SQMUSIC™</a>
+  <!-- LOGO -->
+  <a href={`/${lang}`} class="logo">
+    SQMUSIC™
+  </a>
 
+  <!-- NAVIGATION -->
   <nav class="nav">
-    <a href={`/${lang}`}>Home</a>
-    <a href={`/${lang}/shop`}>Shop</a>
-    <a href={`/${lang}/contact`}>Contact</a>
+
+    <a href={`/${lang}`}>
+      {
+        lang === "fr"
+          ? "Accueil"
+          : lang === "ru"
+          ? "Главная"
+          : "Home"
+      }
+    </a>
+
+    <a href={`/${lang}/blog`}>
+      Blog
+    </a>
+
+    <a href={`/${lang}/about`}>
+      {
+        lang === "fr"
+          ? "À propos"
+          : lang === "ru"
+          ? "О нас"
+          : "About"
+      }
+    </a>
+
+    <a href={`/${lang}/shop`}>
+      {
+        lang === "fr"
+          ? "Boutique"
+          : lang === "ru"
+          ? "Магазин"
+          : "Shop"
+      }
+    </a>
+
+    <a href={`/${lang}/contact`}>
+      {
+        lang === "fr"
+          ? "Contact"
+          : lang === "ru"
+          ? "Контакты"
+          : "Contact"
+      }
+    </a>
+
   </nav>
 
-  <!-- LANGUAGE SWITCH -->
-  <select
-    class="language-select"
-    onchange="window.location.href='/' + this.value"
-  >
-    <option value="en">EN</option>
-    <option value="fr">FR</option>
-    <option value="ru">RU</option>
-  </select>
+  <!-- RIGHT SIDE -->
+  <div class="right-side">
 
+    <!-- LANGUAGE SWITCH -->
+    <select
+      class="language-select"
+      onchange="window.location.href='/' + this.value"
+    >
+      <option value="en" selected={lang === "en"}>EN</option>
+      <option value="fr" selected={lang === "fr"}>FR</option>
+      <option value="ru" selected={lang === "ru"}>RU</option>
+    </select>
+
+    <!-- SOCIALS -->
+    <div class="socials">
+
+      <!-- YOUTUBE -->
+      <a
+        href="https://www.youtube.com/channel/UC-Wv4GZo6gk4_xcgV9Vjtug"
+        target="_blank"
+        aria-label="YouTube"
+      >
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M23.5 6.2s-.2-1.7-.9-2.5c-.9-1-1.9-1-2.4-1.1C16.8 2.3 12 2.3 12 2.3s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 1.1-.7.8-.9 2.5-.9 2.5S0 8.2 0 10.1v1.8c0 1.9.5 3.9.5 3.9s.2 1.7.9 2.5c.9 1 2.1 1 2.7 1.1 2 .2 7.9.3 7.9.3s4.8 0 8.2-.3c.5-.1 1.5-.1 2.4-1.1.7-.8.9-2.5.9-2.5s.5-2 .5-3.9v-1.8c0-1.9-.5-3.9-.5-3.9zM9.7 14.6V7.8l6.5 3.4-6.5 3.4z"/>
+        </svg>
+      </a>
+
+      <!-- X -->
+      <a
+        href="https://x.com/OFFICIALSQMUSIC"
+        target="_blank"
+        aria-label="X"
+      >
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M18 2h3l-7.5 8.5L22 22h-6l-4.7-6.1L5.5 22H2l8-9.2L2 2h6l4.3 5.6L18 2z"/>
+        </svg>
+      </a>
+
+      <!-- TELEGRAM -->
+      <a
+        href="https://t.me/OFFICIAL_SQMUSIC"
+        target="_blank"
+        aria-label="Telegram"
+      >
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M9.04 15.47L8.7 20.3c.5 0 .72-.22.98-.48l2.36-2.27 4.9 3.59c.9.5 1.54.24 1.78-.83l3.23-15.13c.3-1.4-.5-1.95-1.37-1.63L1.64 10.32c-1.36.53-1.34 1.3-.23 1.65l4.84 1.51L17.5 6.4c.53-.35 1.02-.16.62.19z"/>
+        </svg>
+      </a>
+
+    </div>
+  </div>
 </header>
+
+<style>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+.nav {
+  display: flex;
+  gap: 35px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: #5A3D7F;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.language-select {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  gap: 18px;
+}
+
+.socials a {
+  color: #444;
+  transition: 0.2s;
+}
+
+.socials a:hover {
+  color: #5A3D7F;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+}
+</style>
