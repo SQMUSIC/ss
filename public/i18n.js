@@ -5,10 +5,8 @@ const translations = {
     about: "About",
     shop: "Shop",
     contact: "Contact",
-
     shop_title: "Shop",
     shop_text: "My store is below",
-
     contact_title: "Contact",
     contact_name: "Name",
     contact_email: "Email",
@@ -22,10 +20,8 @@ const translations = {
     about: "À propos",
     shop: "Boutique",
     contact: "Contact",
-
     shop_title: "Boutique",
     shop_text: "Ma boutique est ci-dessous",
-
     contact_title: "Contact",
     contact_name: "Nom",
     contact_email: "Email",
@@ -39,10 +35,8 @@ const translations = {
     about: "О нас",
     shop: "Магазин",
     contact: "Контакты",
-
     shop_title: "Магазин",
     shop_text: "Мой магазин ниже",
-
     contact_title: "Контакт",
     contact_name: "Имя",
     contact_email: "Почта",
@@ -54,6 +48,7 @@ const translations = {
 function applyLang(lang) {
   localStorage.setItem("lang", lang);
 
+  // 🔥 ПЕРЕВОД ВСЕГО СТРАНИЦЫ КАЖДЫЙ РАЗ
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang]?.[key]) {
@@ -69,25 +64,26 @@ function applyLang(lang) {
   });
 }
 
-function bootI18n() {
+function init() {
   const select = document.querySelector(".language-select");
   if (!select) return;
 
-  const saved = localStorage.getItem("lang") || "en";
+  const saved = localStorage.getItem("lang") || navigator.language.slice(0, 2) || "en";
+
   select.value = saved;
 
+  // 💥 важно: применяем сразу
   applyLang(saved);
 
+  // 💥 при смене языка — ПЕРЕПЕРЕВОД ВСЕГО САЙТА
   select.addEventListener("change", (e) => {
     applyLang(e.target.value);
   });
+
+  // 🔥 страховка: повторный запуск через небольшую задержку
+  setTimeout(() => applyLang(select.value), 300);
 }
 
-/* 🚀 НАДЁЖНЫЙ ЗАПУСК */
-document.addEventListener("DOMContentLoaded", bootI18n);
-window.addEventListener("load", bootI18n);
-}
-
-// запускаем 2 раза для надёжности
+// 🚀 ждём когда Astro полностью отрисует страницу
+document.addEventListener("DOMContentLoaded", init);
 window.addEventListener("load", init);
-setTimeout(init, 300);
