@@ -5,13 +5,15 @@ const translations = {
     about: "About",
     shop: "Shop",
     contact: "Contact",
-    shop_title: "Shop",
-    shop_text: "My store is below",
-    contact_title: "Contact",
-    contact_name: "Name",
-    contact_email: "Email",
-    contact_message: "Message",
-    contact_send: "Send"
+    "SQMUSIC™": "SQMUSIC™",
+    "Shop": "Shop",
+    "Contact": "Contact",
+    "My store is below": "My store is below",
+    "Contact": "Contact",
+    "Send": "Send",
+    "Name": "Name",
+    "Email": "Email",
+    "Message": "Message"
   },
 
   fr: {
@@ -20,13 +22,14 @@ const translations = {
     about: "À propos",
     shop: "Boutique",
     contact: "Contact",
-    shop_title: "Boutique",
-    shop_text: "Ma boutique est ci-dessous",
-    contact_title: "Contact",
-    contact_name: "Nom",
-    contact_email: "Email",
-    contact_message: "Message",
-    contact_send: "Envoyer"
+    "SQMUSIC™": "SQMUSIC™",
+    "Shop": "Boutique",
+    "Contact": "Contact",
+    "My store is below": "Ma boutique est ci-dessous",
+    "Send": "Envoyer",
+    "Name": "Nom",
+    "Email": "Email",
+    "Message": "Message"
   },
 
   ru: {
@@ -35,55 +38,68 @@ const translations = {
     about: "О нас",
     shop: "Магазин",
     contact: "Контакты",
-    shop_title: "Магазин",
-    shop_text: "Мой магазин ниже",
-    contact_title: "Контакт",
-    contact_name: "Имя",
-    contact_email: "Почта",
-    contact_message: "Сообщение",
-    contact_send: "Отправить"
+    "SQMUSIC™": "SQMUSIC™",
+    "Shop": "Магазин",
+    "Contact": "Контакт",
+    "My store is below": "Мой магазин ниже",
+    "Send": "Отправить",
+    "Name": "Имя",
+    "Email": "Почта",
+    "Message": "Сообщение"
   }
 };
 
-function applyLang(lang) {
+function translateTextNodes(lang) {
+  const dict = translations[lang] || {};
+
+  function walk(node) {
+    if (!node) return;
+
+    // пропускаем ненужное
+    if (
+      node.nodeType === 1 &&
+      ["SCRIPT", "STYLE", "TEXTAREA", "INPUT"].includes(node.tagName)
+    ) {
+      return;
+    }
+
+    // текстовые узлы
+    if (node.nodeType === 3) {
+      const text = node.nodeValue.trim();
+
+      if (dict[text]) {
+        node.nodeValue = dict[text];
+      }
+    }
+
+    node.childNodes.forEach(walk);
+  }
+
+  walk(document.body);
+}
+
+function setLang(lang) {
   localStorage.setItem("lang", lang);
-
-  // 🔥 ПЕРЕВОД ВСЕГО СТРАНИЦЫ КАЖДЫЙ РАЗ
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (translations[lang]?.[key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
-
-  document.querySelectorAll("[data-placeholder-i18n]").forEach(el => {
-    const key = el.getAttribute("data-placeholder-i18n");
-    if (translations[lang]?.[key]) {
-      el.setAttribute("placeholder", translations[lang][key]);
-    }
-  });
+  translateTextNodes(lang);
 }
 
 function init() {
   const select = document.querySelector(".language-select");
   if (!select) return;
 
-  const saved = localStorage.getItem("lang") || navigator.language.slice(0, 2) || "en";
+  const saved =
+    localStorage.getItem("lang") ||
+    navigator.language.slice(0, 2) ||
+    "en";
 
   select.value = saved;
 
-  // 💥 важно: применяем сразу
-  applyLang(saved);
+  setLang(saved);
 
-  // 💥 при смене языка — ПЕРЕПЕРЕВОД ВСЕГО САЙТА
   select.addEventListener("change", (e) => {
-    applyLang(e.target.value);
+    setLang(e.target.value);
   });
-
-  // 🔥 страховка: повторный запуск через небольшую задержку
-  setTimeout(() => applyLang(select.value), 300);
 }
 
-// 🚀 ждём когда Astro полностью отрисует страницу
 document.addEventListener("DOMContentLoaded", init);
 window.addEventListener("load", init);
