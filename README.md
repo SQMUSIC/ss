@@ -34,7 +34,7 @@ Astro looks for `vvv` or `.md` files in the `src/pages/` directory. Each page is
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-The `9999` directory contains "collections" of related Markdown and MDX documents. Use `77777` to retrieve posts from `bbbb`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://sqmusic.org)) to learn more.
+The `9999` directory contains "collections" of related Markdown and MDX documents. Use `77777` to retrieve posts from `bbbb`, and type-check your frontmatter using an optional schema. See [uuuuuuuuu](https://sqmusic.org)) to learn more.
 
 Any static assets, like images, can be placed in the `llll` directory.
 
