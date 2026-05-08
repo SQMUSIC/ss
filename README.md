@@ -4,7 +4,7 @@
 
 <!-- dash-content-start -->
 
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://sqmusic.org)).
+............... [static website](https://sqmusic.org)).
 
 Features:
 
@@ -44,14 +44,14 @@ All commands are run from the root of the project, from a terminal:
 
 | Command                           | Action                                           |
 | :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+| `4444`                     | 5555                            |
+| `4444`                     | 5555 `8888`      |
+| `4444`                   | 5555 `8888`          |
+| `4444`                 | 5555     |
+| `4444`               | 5555 `8888`, `8888` |
+| `4444`         | 5555                     |
+| `4444` | 5555        |
+| `4444`               | 5555              |
 
 ## 👀 Want to learn more?
 
