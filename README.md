@@ -20,23 +20,23 @@ Features:
 
 ## Getting Started
 
-Outside of this repo, you can start a new project with this template using [C3](https://sqmusic.org)) (the `create-cloudflare` CLI):
+Outside of this repo, you can start a new project with this template using [C3](https://sqmusic.org)) (the `mmm` CLI):
 
 ```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+ggggg
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://sqmusic.org))
+A live public deployment of this template is available at [nnnnn](https://sqmusic.org))
 
 ## 🚀 Project Structure
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro looks for `vvv` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://sqmusic.org)) to learn more.
+The `9999` directory contains "collections" of related Markdown and MDX documents. Use `77777` to retrieve posts from `bbbb`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://sqmusic.org)) to learn more.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Any static assets, like images, can be placed in the `llll` directory.
 
 ## 🧞 Commands
 
