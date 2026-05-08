@@ -1,40 +1,25 @@
-<script is:inline>
-  const translations = {
-    en: { home: "Home", blog: "Blog", about: "About", shop: "Shop", contact: "Contact" },
-    fr: { home: "Accueil", blog: "Blog", about: "À propos", shop: "Boutique", contact: "Contact" },
-    ru: { home: "Главная", blog: "Блог", about: "О нас", shop: "Магазин", contact: "Контакты" },
-    de: { home: "Start", blog: "Blog", about: "Über", shop: "Shop", contact: "Kontakt" },
-    pl: { home: "Strona główna", blog: "Blog", about: "O nas", shop: "Sklep", contact: "Kontakt" },
-    ar: { home: "الرئيسية", blog: "مدونة", about: "حول", shop: "المتجر", contact: "اتصال" },
-    jp: { home: "ホーム", blog: "ブログ", about: "概要", shop: "ショップ", contact: "連絡" },
-    es: { home: "Inicio", blog: "Blog", about: "Sobre", shop: "Tienda", contact: "Contacto" }
-  };
+---
+const { lang = "en" } = Astro.props;
+---
 
-  function setLang(lang) {
-    localStorage.setItem("lang", lang);
+<header class="header">
 
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
+  <a href={`/${lang}`} class="logo">SQMUSIC™</a>
 
-      if (translations[lang]?.[key]) {
-        el.textContent = translations[lang][key];
-      }
-    });
-  }
+  <nav class="nav">
+    <a href={`/${lang}`}>Home</a>
+    <a href={`/${lang}/shop`}>Shop</a>
+    <a href={`/${lang}/contact`}>Contact</a>
+  </nav>
 
-  function init() {
-    const select = document.querySelector(".language-select");
-    if (!select) return;
+  <!-- LANGUAGE SWITCH -->
+  <select
+    class="language-select"
+    onchange="window.location.href='/' + this.value"
+  >
+    <option value="en">EN</option>
+    <option value="fr">FR</option>
+    <option value="ru">RU</option>
+  </select>
 
-    const saved = localStorage.getItem("lang") || "en";
-
-    select.value = saved;
-    setLang(saved);
-
-    select.addEventListener("change", (e) => {
-      setLang(e.target.value);
-    });
-  }
-
-  window.addEventListener("DOMContentLoaded", init);
-</script>
+</header>
