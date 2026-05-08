@@ -5,8 +5,10 @@ const translations = {
     about: "About",
     shop: "Shop",
     contact: "Contact",
+
     shop_title: "Shop",
     shop_text: "My store is below",
+
     contact_title: "Contact",
     contact_name: "Name",
     contact_email: "Email",
@@ -20,8 +22,10 @@ const translations = {
     about: "À propos",
     shop: "Boutique",
     contact: "Contact",
+
     shop_title: "Boutique",
     shop_text: "Ma boutique est ci-dessous",
+
     contact_title: "Contact",
     contact_name: "Nom",
     contact_email: "Email",
@@ -35,8 +39,10 @@ const translations = {
     about: "О нас",
     shop: "Магазин",
     contact: "Контакты",
+
     shop_title: "Магазин",
     shop_text: "Мой магазин ниже",
+
     contact_title: "Контакт",
     contact_name: "Имя",
     contact_email: "Почта",
@@ -48,17 +54,14 @@ const translations = {
 function applyLang(lang) {
   localStorage.setItem("lang", lang);
 
-  const all = document.querySelectorAll("[data-i18n]");
-  const allPlaceholders = document.querySelectorAll("[data-placeholder-i18n]");
-
-  all.forEach(el => {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang]?.[key]) {
       el.textContent = translations[lang][key];
     }
   });
 
-  allPlaceholders.forEach(el => {
+  document.querySelectorAll("[data-placeholder-i18n]").forEach(el => {
     const key = el.getAttribute("data-placeholder-i18n");
     if (translations[lang]?.[key]) {
       el.setAttribute("placeholder", translations[lang][key]);
@@ -66,10 +69,7 @@ function applyLang(lang) {
   });
 }
 
-// 🚀 ВАЖНО: НЕ DOMContentLoaded
-// запускаем с задержкой, чтобы Astro всё дорендерил
-
-function init() {
+function bootI18n() {
   const select = document.querySelector(".language-select");
   if (!select) return;
 
@@ -81,6 +81,11 @@ function init() {
   select.addEventListener("change", (e) => {
     applyLang(e.target.value);
   });
+}
+
+/* 🚀 НАДЁЖНЫЙ ЗАПУСК */
+document.addEventListener("DOMContentLoaded", bootI18n);
+window.addEventListener("load", bootI18n);
 }
 
 // запускаем 2 раза для надёжности
