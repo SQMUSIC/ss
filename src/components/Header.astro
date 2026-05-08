@@ -22,11 +22,11 @@ const { lang = "en" } = Astro.props;
       }
     </a>
 
-    <a href={`/${lang}/blog`}>
+    <a href="/blog">
       Blog
     </a>
 
-    <a href={`/${lang}/about`}>
+    <a href="/about">
       {
         lang === "fr"
           ? "À propos"
@@ -36,7 +36,7 @@ const { lang = "en" } = Astro.props;
       }
     </a>
 
-    <a href={`/${lang}/shop`}>
+    <a href="/shop">
       {
         lang === "fr"
           ? "Boutique"
@@ -46,7 +46,7 @@ const { lang = "en" } = Astro.props;
       }
     </a>
 
-    <a href={`/${lang}/contact`}>
+    <a href="/contact">
       {
         lang === "fr"
           ? "Contact"
