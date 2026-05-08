@@ -1,108 +1,3 @@
----
-import HeaderLink from './HeaderLink.astro';
----
-
-<header class="header">
-  <!-- LOGO -->
-  <a href="/" class="logo">SQMUSIC™</a>
-
-  <!-- NAVIGATION -->
-  <nav class="nav">
-    <HeaderLink href="/" data-i18n="home">Home</HeaderLink>
-    <HeaderLink href="/blog" data-i18n="blog">Blog</HeaderLink>
-    <HeaderLink href="/about" data-i18n="about">About</HeaderLink>
-    <HeaderLink href="/shop" data-i18n="shop">Shop</HeaderLink>
-    <HeaderLink href="/contact" data-i18n="contact">Contact</HeaderLink>
-  </nav>
-
-  <!-- RIGHT SIDE -->
-  <div class="right-side">
-
-    <!-- LANG -->
-    <select class="language-select">
-      <option value="en">EN</option>
-      <option value="fr">FR</option>
-      <option value="ru">RU</option>
-      <option value="de">DE</option>
-      <option value="pl">PL</option>
-      <option value="ar">AR</option>
-      <option value="jp">JP</option>
-      <option value="es">ES</option>
-    </select>
-
-    <!-- SOCIALS -->
-    <div class="socials">
-
-      <a href="https://www.youtube.com/channel/UC-Wv4GZo6gk4_xcgV9Vjtug" target="_blank">
-        ▶
-      </a>
-
-      <a href="https://x.com/OFFICIALSQMUSIC" target="_blank">
-        ✕
-      </a>
-
-      <a href="https://t.me/OFFICIAL_SQMUSIC" target="_blank">
-        ✈
-      </a>
-
-    </div>
-  </div>
-</header>
-
-<style>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 40px;
-  background: white;
-  border-bottom: 1px solid #eee;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: none;
-  color: black;
-}
-
-.nav {
-  display: flex;
-  gap: 35px;
-}
-
-.right-side {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-
-.language-select {
-  border: 1px solid #ddd;
-  background: white;
-  padding: 6px 10px;
-  border-radius: 8px;
-}
-
-.socials {
-  display: flex;
-  gap: 18px;
-}
-
-.socials a {
-  color: #444;
-  text-decoration: none;
-}
-
-@media (max-width: 900px) {
-  .nav,
-  .language-select {
-    display: none;
-  }
-}
-</style>
-
-<!-- 🌍 LANGUAGE SYSTEM -->
 <script is:inline>
   const translations = {
     en: { home: "Home", blog: "Blog", about: "About", shop: "Shop", contact: "Contact" },
@@ -115,55 +10,31 @@ import HeaderLink from './HeaderLink.astro';
     es: { home: "Inicio", blog: "Blog", about: "Sobre", shop: "Tienda", contact: "Contacto" }
   };
 
-  const select = document.querySelector(".language-select");
-
   function setLang(lang) {
     localStorage.setItem("lang", lang);
 
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
 
-      if (translations[lang] && translations[lang][key]) {
+      if (translations[lang]?.[key]) {
         el.textContent = translations[lang][key];
       }
     });
   }
 
-  select.addEventListener("change", (e) => {
-    setLang(e.target.value);
-  });
+  function init() {
+    const select = document.querySelector(".language-select");
+    if (!select) return;
 
-  const saved = localStorage.getItem("lang") || "en";
-  select.value = saved;
-  setLang(saved);
-</script>
+    const saved = localStorage.getItem("lang") || "en";
 
+    select.value = saved;
+    setLang(saved);
 
-
-
-
-<script is:inline>
-  import { translations } from '../i18n.js';
-
-  const select = document.querySelector(".language-select");
-
-  function setLang(lang) {
-    localStorage.setItem("lang", lang);
-
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
+    select.addEventListener("change", (e) => {
+      setLang(e.target.value);
     });
   }
 
-  select.addEventListener("change", (e) => {
-    setLang(e.target.value);
-  });
-
-  const saved = localStorage.getItem("lang") || "en";
-  select.value = saved;
-  setLang(saved);
+  window.addEventListener("DOMContentLoaded", init);
 </script>
