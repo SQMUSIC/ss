@@ -1,52 +1,14 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import BaseHead from '../components/BaseHead.astro';
+import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<html lang="en">
-  <BaseHead title="Contact" />
+<SiteLayout lang="en" title="Contact">
+  <h1>Contact</h1>
 
-  <body style="margin:0; background:#0f0f0f; color:white; font-family:sans-serif;">
-
-    <Header />
-
-    <main style="padding:40px;">
-
-      <h1 data-i18n="contact_title">Contact</h1>
-
-      <form style="display:flex; flex-direction:column; gap:15px; max-width:400px;">
-
-        <input
-          placeholder="Name"
-          data-placeholder-i18n="contact_name"
-          style="padding:12px; border:none; border-radius:8px;"
-        />
-
-        <input
-          placeholder="Email"
-          data-placeholder-i18n="contact_email"
-          style="padding:12px; border:none; border-radius:8px;"
-        />
-
-        <textarea
-          placeholder="Message"
-          data-placeholder-i18n="contact_message"
-          style="padding:12px; border:none; border-radius:8px; min-height:120px;"
-        ></textarea>
-
-        <button
-          data-i18n="contact_send"
-          style="padding:12px; border:none; border-radius:8px; background:#5A3D7F; color:white;"
-        >
-          Send
-        </button>
-
-      </form>
-
-    </main>
-
-    <Footer />
-
-  </body>
-</html>
+  <form style="display:flex; flex-direction:column; gap:15px; max-width:400px;">
+    <input placeholder="Name" />
+    <input placeholder="Email" />
+    <textarea placeholder="Message"></textarea>
+    <button>Send</button>
+  </form>
+</SiteLayout>
