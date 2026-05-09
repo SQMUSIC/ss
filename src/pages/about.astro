@@ -1,54 +1,8 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<Layout
-	title="About"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date()}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>Last updated: May 2026</p>
-
-	<hr />
-
-	<p>
-		SQMUSIC is a music project that explores different sounds, styles, and emotions through sound.
-	</p>
-
-	<p>
-		Started in 2023, the project focuses on experimenting with genres — from energetic and experimental tracks to more melodic and atmospheric vibes.
-	</p>
-
-	<p>
-		Each release is created with a simple idea: sound should feel alive and different every time.
-	</p>
-
-	<p>
-		SQMUSIC was originally founded in France, but at the moment it is not fixed to a specific location and is still deciding where it will be based in the future.
-	</p>
-
-	<p>
-		The project continues to grow across platforms like SoundCloud, TikTok, Instagram, and others, building its own creative identity.
-	</p>
-
-	<hr />
-
-	<p><strong>SQMUSIC RECORDS</strong></p>
-
-	<p>
-		SQMUSIC RECORDS is a label founded in mid-2024.
-	</p>
-
-	<p>
-		It is currently under development and being shaped into a platform that will support future releases and creative projects.
-	</p>
-
-	<hr />
-
-	<p><strong>NEW WORK</strong></p>
-
-	<p>
-		New tracks, ideas, and experiments are constantly in progress.
-	</p>
-</Layout>
+<SiteLayout lang="en" title="About">
+  <h1>About SQMUSIC</h1>
+  <p>Music project that explores different sounds and styles.</p>
+</SiteLayout>
